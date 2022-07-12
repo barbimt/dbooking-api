@@ -34,6 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests()
                 .antMatchers("/usuarios").permitAll()
+                .antMatchers("/usuarios/**").permitAll()
                 .antMatchers("/usuarios/user/**").permitAll()
                 .antMatchers("/ciudades").permitAll()
                 .antMatchers("/categorias").permitAll()
@@ -41,6 +42,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/reservas").permitAll()
                 .antMatchers("/reservas/productos/**").permitAll()
                 .antMatchers("/productos/**").permitAll()
+                .antMatchers("/productos/ciudad/**/**/**").permitAll()
                 .antMatchers("/productos").permitAll()
                 .antMatchers("/ubicaciones").permitAll()
                 .antMatchers("/caracteristicas").permitAll()
