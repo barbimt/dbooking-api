@@ -21,14 +21,14 @@ public class ImagenController {
     }
 
     @Operation(summary = "Crear una imagen.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<ImagenDTO> guardarImagen(@RequestBody ImagenDTO imagen) {
         return ResponseEntity.ok(service.agregarImagen(imagen));
     }
 
     @Operation(summary = "Buscar imagen por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<ImagenDTO> buscarImagenPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         ImagenDTO imagenDTO = service.buscarImagenPorId(id);
@@ -49,7 +49,7 @@ public class ImagenController {
     }
 
     @Operation(summary = "Listar Imágenes.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<ImagenDTO>> listarImagenes(){
         Collection<ImagenDTO> listaDeImagenes = service.listarImagenes();

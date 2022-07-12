@@ -26,7 +26,7 @@ public class AuthenticationController {
 
 
     @PostMapping(value = "/authenticate")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationDTORequest authenticationDTORequest) throws Exception{
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authenticationDTORequest.getEmail(), authenticationDTORequest.getClave()));

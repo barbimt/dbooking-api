@@ -27,7 +27,7 @@ public class CiudadController {
     }
 
     @Operation(summary = "Buscar ciudad por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<CiudadDTO> buscarCiudadPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         CiudadDTO ciudadDTO = service.buscarCiudadPorId(id);
@@ -48,7 +48,7 @@ public class CiudadController {
     }
 
     @Operation(summary = "Listar ciudades.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<CiudadDTO>> listarCiudades(){
         Collection<CiudadDTO> listaDeCiudades = service.listarCiudades();

@@ -21,14 +21,14 @@ public class DescripcionController {
     }
 
     @Operation(summary = "Crear una descripción.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<DescripcionDTO> guardarDescripcion(@RequestBody DescripcionDTO descripcion) {
         return ResponseEntity.ok(service.agregarDescripcion(descripcion));
     }
 
     @Operation(summary = "Buscar descripción por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<DescripcionDTO> buscarDescripcionPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         DescripcionDTO descripcionDTO = service.buscarDescripcionPorId(id);
@@ -49,7 +49,7 @@ public class DescripcionController {
     }
 
     @Operation(summary = "Listar Descripciones.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<DescripcionDTO>> listarDescripciones(){
         Collection<DescripcionDTO> listaDeDescripciones = service.listarDescripciones();

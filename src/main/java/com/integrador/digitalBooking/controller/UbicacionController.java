@@ -19,14 +19,14 @@ public class UbicacionController {
     public UbicacionController(IUbicacionService service) {this.service = service; }
 
     @Operation(summary = "Crear una ubicación.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<UbicacionDTO> guardarUbicacion(@RequestBody UbicacionDTO ubicacion) {
         return ResponseEntity.ok(service.agregarUbicacion(ubicacion));
     }
 
     @Operation(summary = "Buscar ubicación por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<UbicacionDTO> buscarUbicacionPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         UbicacionDTO ubicacionDTO = service.buscarUbicacionPorId(id);
@@ -40,7 +40,7 @@ public class UbicacionController {
     }
 
     @Operation(summary = "Eliminar una ubicación por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarUbicacion(@PathVariable Integer id) throws ResourceNotFoundException {
         service.eliminarUbicacion(id);
@@ -48,7 +48,7 @@ public class UbicacionController {
     }
 
     @Operation(summary = "Listar Ubicaciones.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<UbicacionDTO>> listarUbicaciones(){
         Collection<UbicacionDTO> listaDeUbicaciones = service.listarUbicaciones();

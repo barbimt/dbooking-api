@@ -24,14 +24,14 @@ public class ProductoController {
     }
 
     @Operation(summary = "Crear un producto.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<ProductoDTO> guardarProducto(@RequestBody ProductoDTO producto) {
         return ResponseEntity.ok(service.agregarProducto(producto));
     }
 
     @Operation(summary = "Buscar producto por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<ProductoDTO> buscarProductoPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         ProductoDTO productoDTO = service.buscarProductoPorId(id);
@@ -52,7 +52,7 @@ public class ProductoController {
     }
 
     @Operation(summary = "Listar Productos.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<ProductoDTO>> listarProductos(){
         Collection<ProductoDTO> listaDeProductos = service.listarProductos();
@@ -62,7 +62,7 @@ public class ProductoController {
     //Endpoint Lista de Productos por categoria
     @Operation(summary = "Listar Productos por categoría.")
     @GetMapping("/categoria/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     public ResponseEntity<Collection<ProductoDTO>> listarProductosPorCategoria(@PathVariable("id") Integer id){
         Collection<ProductoDTO> listaDeProductos = service.listarProductosPorCategoria(id);
         return ResponseEntity.ok(listaDeProductos);
@@ -71,7 +71,7 @@ public class ProductoController {
     //Endpoint Lista de Productos por ciudad
     @Operation(summary = "Listar Productos por ciudad.")
     @GetMapping("/ciudad/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     public ResponseEntity<Collection<ProductoDTO>> listarProductosPorCiudad(@PathVariable("id") Integer id){
         Collection<ProductoDTO> listaDeProductos = service.listarProductosPorCiudad(id);
         return ResponseEntity.ok(listaDeProductos);
@@ -80,7 +80,7 @@ public class ProductoController {
     //Endpoint Lista de Productos por fecha
     @Operation(summary = "Listar Productos por fechas.")
     @GetMapping("/{fechaI}/{fechaF}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     public ResponseEntity<Collection<ProductoDTO>> listarProductosPorFechas(@PathVariable("fechaI")
     String fechaI, @PathVariable("fechaF") String fechaF) {
         Collection<ProductoDTO> listaDeProductos = service.listarProductosPorFechas(Date.valueOf(fechaI), Date.valueOf(fechaF));
@@ -91,7 +91,7 @@ public class ProductoController {
     //Endpoint lista de Productos por ciudad e intervalo de fechas}
     @Operation(summary = "Listar Productos por ciudad e intervalo de fechas.")
     @GetMapping("/ciudad/{id}/{fechaI}/{fechaF}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     public ResponseEntity<Collection<ProductoDTO>> listarProductosPorCiudadesYFechas(@PathVariable("id") Integer id, @PathVariable("fechaI")
             String fechaI, @PathVariable("fechaF") String fechaF) {
         Collection<ProductoDTO> listaDeProductos = service.listarProductosPorCiudadesYFechas(id, Date.valueOf(fechaI), Date.valueOf(fechaF));

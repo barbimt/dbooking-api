@@ -21,14 +21,14 @@ public class CategoriaController {
     }
 
     @Operation(summary = "Crear una categoría.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<CategoriaDTO> guardarCategoria(@RequestBody CategoriaDTO categoria) {
         return ResponseEntity.ok(service.agregarCategoria(categoria));
     }
 
     @Operation(summary = "Buscar categoría por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<CategoriaDTO> buscarCategoriaPorId(@PathVariable Integer id) throws ResourceNotFoundException{
         CategoriaDTO categoriaDTO = service.buscarCategoriaPorId(id);
@@ -49,7 +49,7 @@ public class CategoriaController {
     }
 
     @Operation(summary = "Listar Categorías.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<CategoriaDTO>> listarCategorias(){
         Collection<CategoriaDTO> listaDeCategorias = service.listarCategorias();

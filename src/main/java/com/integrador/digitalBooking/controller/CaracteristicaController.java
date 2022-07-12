@@ -21,14 +21,14 @@ public class CaracteristicaController {
     }
 
     @Operation(summary = "Crear una característica.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<CaracteristicaDTO> guardarCaracteristica(@RequestBody CaracteristicaDTO caracteristica) {
         return ResponseEntity.ok(service.agregarCaracteristica(caracteristica));
     }
 
     @Operation(summary = "Buscar característica por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<CaracteristicaDTO> buscarCaracteristicaPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         CaracteristicaDTO caracteristicaDTO = service.buscarCaracteristicaPorId(id);
@@ -49,7 +49,7 @@ public class CaracteristicaController {
     }
 
     @Operation(summary = "Listar Características.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<CaracteristicaDTO>> listarCaracteristicas(){
         Collection<CaracteristicaDTO> listaDeCaracteristicas = service.listarCaracteristicas();

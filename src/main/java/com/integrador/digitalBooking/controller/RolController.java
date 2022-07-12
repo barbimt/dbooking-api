@@ -21,14 +21,14 @@ public class RolController {
 
 
     @Operation(summary = "Crear un rol.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<RolDTO> guardarRol(@RequestBody RolDTO rol) {
         return ResponseEntity.ok(service.agregarRol(rol));
     }
 
     @Operation(summary = "Buscar rol por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<RolDTO> buscarRolPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         RolDTO rolDTO = service.buscarRolPorId(id);
@@ -49,7 +49,7 @@ public class RolController {
     }
 
     @Operation(summary = "Listar Roles.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<RolDTO>> listarRols(){
         Collection<RolDTO> listaDeRoles = service.listarRoles();

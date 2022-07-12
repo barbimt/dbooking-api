@@ -23,14 +23,14 @@ public class ReservaController {
 
 
     @Operation(summary = "Crear una reserva.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<ReservaDTO> guardarReserva(@RequestBody ReservaDTO reserva) {
         return ResponseEntity.ok(service.agregarReserva(reserva));
     }
 
     @Operation(summary = "Buscar reserva por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<ReservaDTO> buscarReservaPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         ReservaDTO reservaDTO = service.buscarReservaPorId(id);
@@ -51,7 +51,7 @@ public class ReservaController {
     }
 
     @Operation(summary = "Listar Reservas.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<ReservaDTO>> listarReservas(){
         Collection<ReservaDTO> listaDeReservas = service.listarReservas();
@@ -61,7 +61,7 @@ public class ReservaController {
     //Endpoint Lista de Reservas por ID de Producto
     @Operation(summary = "Listar Reservas por ID de producto.")
     @GetMapping("/productos/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     public ResponseEntity<Collection<ReservaDTO>> listarReservasPorIdProducto(@PathVariable("id") Integer id){
         Collection<ReservaDTO> listaDeReservasPorIdProducto = service.listarReservasPorIdProducto(id);
         return ResponseEntity.ok(listaDeReservasPorIdProducto);
@@ -70,7 +70,7 @@ public class ReservaController {
     //Endpoint Lista de Reservas por ID de Usuario
     @Operation(summary = "Listar Reservas por ID de producto.")
     @GetMapping("/usuarios/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     public ResponseEntity<Collection<ReservaDTO>> listarReservasPorIdUsuario(@PathVariable("id") Integer id) throws ResourceNotFoundException {
         Collection<ReservaDTO> listaDeReservasPorIdUsuario = service.listarReservasPorIdUsuario(id);
         if (listaDeReservasPorIdUsuario.isEmpty()){

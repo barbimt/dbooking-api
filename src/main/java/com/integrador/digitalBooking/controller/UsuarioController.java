@@ -25,7 +25,7 @@ public class UsuarioController {
 
 
     @Operation(summary = "Crear un usuario.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<UsuarioDTO> guardarUsuario(@RequestBody UsuarioDTO usuario, BindingResult bindingResult) throws BadRequestsExceptions {
         if(bindingResult.hasErrors())
@@ -38,7 +38,7 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Buscar usuario por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioDTO> buscarUsuarioPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         UsuarioDTO usuarioDTO = service.buscarUsuarioPorId(id);
@@ -46,7 +46,7 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Buscar usuario por email.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/user/{email}")
     public ResponseEntity<UsuarioDTO> buscarPorEmail(@PathVariable String email) throws ResourceNotFoundException {
         UsuarioDTO usuarioDTO = service.listarPorEmail(email);
@@ -54,7 +54,7 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Actualizar los datos de un usuario.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PutMapping
     public ResponseEntity<UsuarioDTO> actualizarUsuario(@RequestBody UsuarioDTO usuarioDTO) throws BadRequestsExceptions {
         return ResponseEntity.ok(service.actualizarUsuario(usuarioDTO));
@@ -68,7 +68,7 @@ public class UsuarioController {
     }
 
     @Operation(summary = "Listar Usuarios.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<UsuarioDTO>> listarUsuarios(){
         Collection<UsuarioDTO> listaDeUsuarios = service.listarUsuarios();

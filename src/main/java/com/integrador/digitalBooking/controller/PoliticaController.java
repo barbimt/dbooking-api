@@ -21,14 +21,14 @@ public class PoliticaController {
 
 
     @Operation(summary = "Crear una política.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @PostMapping
     public ResponseEntity<PoliticaDTO> guardarPolitica(@RequestBody PoliticaDTO politica) {
         return ResponseEntity.ok(service.agregarPolitica(politica));
     }
 
     @Operation(summary = "Buscar política por su ID.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping("/{id}")
     public ResponseEntity<PoliticaDTO> buscarPoliticaPorId(@PathVariable Integer id) throws ResourceNotFoundException {
         PoliticaDTO politicaDTO = service.buscarPoliticaPorId(id);
@@ -49,7 +49,7 @@ public class PoliticaController {
     }
 
     @Operation(summary = "Listar Políticas.")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://barbimt.github.io")
     @GetMapping
     public ResponseEntity<Collection<PoliticaDTO>> listarPoliticas(){
         Collection<PoliticaDTO> listaDePoliticas = service.listarPoliticas();
